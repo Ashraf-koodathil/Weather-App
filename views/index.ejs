@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="weather-page">
+
+        <form action="/weather" method="post">
+            <input type="text" name="place" placeholder="Place Name" required>
+            <button type="submit">Search</button>
+        </form>
+    
+        <div id="weather-container">
+    
+            <div id="weather-head">
+    
+                <div id="weather-content">
+                    <h1><%= weatherData.data.name %></h1>
+                    <h1><%= weatherData.temparature %>°<sup>c</sup></h1>
+                    <h3><%= weatherData.weatherState[0].main %></h3>
+                </div>
+        
+                <div id="weather-date">
+        
+                    <% const currenTime = new Date() %>
+                    <% const day = currenTime.getDay() %>
+                    <% const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] %>
+                    <% const ampm = currenTime.getHours() >= 12 ? "PM":"AM" %>
+                    <% let hour = currenTime.getHours() % 12   %>
+                    <%  hour = hour ? hour: 12 %>
+                    <h2>Weather</h2>
+                    <h3 style="display: inline;"><%= daysOfWeek[day]%>,</h3>
+                    <h3 style="display: inline;"><%= hour %>:<%= currenTime.getMinutes().toString().padStart(2, '0')%> <%= ampm %></h3>
+                    <h3><%= weatherData.weatherState[0].description %></h3>
+        
+                </div>
+    
+            </div>
+    
+            <div id="weather-details">
+                
+                <h3>Wind Speed: <%= weatherData.windSpeed %> km/h</h3>
+                <h3>Maximum temparature: <%= weatherData.temparature_Max %>°<sup>c</sup></h3>
+                <h3>Minimum temparature: <%= weatherData.temparature_Min %>°<sup>c</sup></h3><br>
+                <h3>Sunrise Time: <%= weatherData.sunriseTime %></h3>
+                <h3>Sunset Time: <%= weatherData.sunsetTime %></h3>
+                <h3>Humidity: <%= weatherData.data.main.humidity %>%</h3>
+
+    
+            </div>
+    
+        </div>
+
+    </div>
+</body>
+</html>

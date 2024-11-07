@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+}
+
+body {
+    background-color: #faf9f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#weather-page {
+    background-color: #000000;
+    padding: 25px 15px;
+    border-radius: 10px;
+}
+
+form {
+    margin-left: 267px;
+}
+
+form input{
+    width: 220px; 
+} 
+
+form button,input{
+    height: 20px;
+    padding: 4px;
+    color: black;
+    font-size: 15px;
+    border-radius: 6px;
+    border: none;
+}
+
+form button{
+   height: 30px; 
+} 
+
+#weather-head{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    
+    /* flex-direction: column; */
+    /* align-items: center; */
+}
+
+
+#weather-container{
+    margin-top: 20px;
+    padding: 15px 10px;
+    width: 950px;
+    /* border: solid 1px red; */
+    border-radius: 10px 5px;
+    height: 200px;
+}
+
+#weather-date h3{
+    font-size: 17px;
+    font-weight: 300;
+}
+
+#weather-date h2{
+    font-weight: 400;
+}
+
+#weather-details{
+    height: 90px;
+    display: flex;
+    justify-items: center;
+    
+}
+
+#weather-details h3{
+    /* border: solid 0.5px red; */
+    margin: 4px;
+    align-content: center;
+}
